@@ -4,7 +4,7 @@ import userService from './service/user-service';
 import verifyRecordService from './service/verify-record-service';
 import emailService from './service/email-service';
 import kvObjService from './service/kv-obj-service';
-import oauthService from "./service/oauth-service";
+import oauthService from './service/oauth-service';
 import analysisService from './service/analysis-service';
 export { ContactInbox } from './email/contact-inbox';
 export default {
@@ -34,7 +34,8 @@ export default {
 		await verifyRecordService.clearRecord({ env })
 		await userService.resetDaySendCount({ env })
 		await emailService.completeReceiveAll({ env })
-		await oauthService.clearNoBindOathUser({ env })
+		await emailService.autoClean({ env })
 		await analysisService.refreshEchartsCache({ env })
+		await oauthService.clearNoBindOathUser({ env })
 	},
 };

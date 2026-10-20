@@ -6,6 +6,7 @@ import emailService from './service/email-service';
 import kvObjService from './service/kv-obj-service';
 import oauthService from "./service/oauth-service";
 import analysisService from './service/analysis-service';
+export { ContactInbox } from './email/contact-inbox';
 export default {
 	 async fetch(req, env, ctx) {
 
